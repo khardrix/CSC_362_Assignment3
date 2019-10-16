@@ -8,10 +8,8 @@
 	// between the players and there was no collision. This function acts like a
 	// boolean method does in Java
 int collision(char* p1, char* p2) {
-	int p1Position = (int)p1;
-	int p2Position = (int)p2;
 
-	return (p1Position - p2Position);
+	return ((int)p1 - (int)p2);
 }
 
 

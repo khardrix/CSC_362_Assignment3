@@ -44,6 +44,6 @@ int main() {
 	srand(time(0)); 
 
 
-	// return a 0 (zero) to indicate the program finished with no errors
+	// return 0 (zero) to indicate the program finished with no errors
 	return 0;
 }
