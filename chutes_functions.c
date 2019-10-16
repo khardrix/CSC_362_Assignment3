@@ -18,7 +18,6 @@ int collision(char* p1, char* p2) {
 // This function was added by me to simulate rolling a six-sided die.
 	// This function returns the int value result of "rolling the die"
 int rollDice() {
-	int diceRoll = ((rand() % 6) + 1);
 
-	return diceRoll;
+	return (rand() % 6) + 1;
 }
