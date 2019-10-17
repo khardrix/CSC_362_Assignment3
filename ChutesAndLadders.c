@@ -71,13 +71,16 @@ int main() {
 	/////////////////////// BEGINNING: HOW TO MOVE THE POINTER THROUGH THE BOARD! ///////////////////////////////
 	player1 += 3;
 	player2 += 7;
-	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-	output(board, player1, player2, outputFP);
+	// printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
+	output(board, &player1, &player2, outputFP);
+
+	
 	////////////////////////// END: HOW TO MOVE THE POINTER THROUGH THE BOARD! //////////////////////////////////
 	// fprintf(outputFP, "player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-	player1 += 60;
+	player1 += 10;
 	player2 += 20;
-	output(board, player1, player2, outputFP);
+	// printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
+	output(board, &player1, &player2, outputFP);
 	// fprintf(outputFP, "player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
 
 

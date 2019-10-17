@@ -3,17 +3,17 @@
 
 // Used to output the current game board, including player 1's and player 2's
 	// positions to a disk file on a single line.
-void output(char board[], char* player1, char* player2, FILE* outputFP) {
+void output(char* board, char* player1, char* player2, FILE* outputFP) {
 	
 	int i = 0;
 
 	while (board[i] != '\0') {
 
-		if (board[i] == *player1) {
-			board[i] = 49;
+		if (i == *player1) {
+			board[i] = '1';
 		}
-		else if (board[i] == *player2) {
-			board[i] = 50;
+		else if (i == *player2) {
+			board[i] = '2';
 		}
 		
 		putc(board[i], outputFP);

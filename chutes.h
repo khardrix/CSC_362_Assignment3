@@ -10,7 +10,7 @@
 /* ----------------------------------------------- FUNCTION PROTOTYPES ---------------------------------------------- */
 // Used to output the current game board, including player 1's and player 2's
 	// positions to a disk file on a single line.
-void output(char [], char*, char*, FILE*);
+void output(char*, char*, char*, FILE*);
 
 // Used to move the players around the board. Other functions are called from
 	// called from this function to detect chutes and ladders and collisions.
