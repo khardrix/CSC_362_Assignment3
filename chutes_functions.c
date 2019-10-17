@@ -1,6 +1,29 @@
 #include "chutes.h"
 
 
+// Used to output the current game board, including player 1's and player 2's
+	// positions to a disk file on a single line.
+void output(char board[], char* player1, char* player2, FILE* outputFP) {
+	
+	int i = 0;
+
+	while (board[i] != '\0') {
+
+		if (board[i] == *player1) {
+			board[i] = 49;
+		}
+		else if (board[i] == *player2) {
+			board[i] = 50;
+		}
+		
+		putc(board[i], outputFP);
+		
+		i++;
+	}
+	putc('\n', outputFP);
+}
+
+
 // This function was added by me to detect collisions among players.
 	// If this function returns a "0" (zero), that means there is zero distance
 	// between the players, meaning there was a collision. If this function
