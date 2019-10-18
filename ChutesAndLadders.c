@@ -71,11 +71,13 @@ int main() {
 	/////////////////////// BEGINNING: HOW TO MOVE THE POINTER THROUGH THE BOARD! ///////////////////////////////
 	printf("Original board = %s \n", board);
 	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
-	player1 += 3;
+	player1 += 11;
 	player2 += 7;
 	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
 	output(board, player1, player2, outputFP);
 	printf("board after first player1 and player 2 moves = %s \n", board);
+
+	findHaven(board, player1, *player1);
 
 	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
 	player1 += 10;

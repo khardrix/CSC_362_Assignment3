@@ -18,7 +18,7 @@ void output(char [], char*, char*, FILE*);
 	// the amount the player moved and the current position of the player.
 		// This function performs some error prevention and
 		// returns a char pointer
-char* move(char*, char*, int, char*, int);
+char* move(char*, char*, int, char [], int);
 
 // Used when a player lands on a 'B' or 'F'. This function searches for the
 	// the nearest haven (denoted as a 'H'), with the direction
@@ -33,7 +33,7 @@ char* findHaven(char [], char*, char);
 		// This function calculates how far the player is to move and then
 		// return that forward or backward distance to the move(...){...}
 		// function that calls this chuteLadder(...){...} function.
-char* chuteLadder(char*, char*);
+char* chuteLadder(char*, char []);
 
 // This function was added by me to detect collisions among players and
 	// return "0" (zero) if there was a collision amongst the players.
