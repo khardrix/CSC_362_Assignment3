@@ -3,24 +3,36 @@
 
 // Used to output the current game board, including player 1's and player 2's
 	// positions to a disk file on a single line.
-void output(char* board, char* player1, char* player2, FILE* outputFP) {
-	
-	int i = 0;
+void output(char board[], char* player1, char* player2, FILE* outputFP) {
 
-	while (board[i] != '\0') {
+	// while loop to iterate, char-by-char, through the char array that serves as the game board
+	while (*board != '\0') {
+		// if statement that checks if player1 is located at this position
+		if (board == player1) {
+			putc('1', outputFP);
+		}
+		else if (board == player2) {
+			putc('2', outputFP);
+		}
 
-		if (i == *player1) {
-			board[i] = '1';
-		}
-		else if (i == *player2) {
-			board[i] = '2';
-		}
-		
-		putc(board[i], outputFP);
-		
-		i++;
+		putc(*board, outputFP);
+
+		board++;
 	}
+
 	putc('\n', outputFP);
+}
+
+// Used when a player lands on a 'B' or 'F'. This function searches for the
+	// the nearest haven (denoted as a 'H'), with the direction
+	// depending on what the player landed on. This function changes the board
+	// and returns where the player is to move to the move(...){...} function.
+char* findHaven(char board[], char* player, char direction) {
+	int squaresToMove = 0;
+
+	if (direction == 'B') {
+
+	}
 }
 
 

@@ -51,8 +51,8 @@ int main() {
 
 
 
-	// TEST VARIABLE
-	// int i = 0;
+	// TEST VARIABLES
+	int testMove;
 	/* -------------------------------------------- END OF VARIABLE DECLARATIONS ---------------------------------------------- */
 
 	// Used to seed the rand() function 
@@ -69,33 +69,43 @@ int main() {
 //////////////////////////////////////////// BEGINNING TESTING CODE: DELETE BEFORE TURN IN /////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 	/////////////////////// BEGINNING: HOW TO MOVE THE POINTER THROUGH THE BOARD! ///////////////////////////////
+	printf("Original board = %s \n", board);
+	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
 	player1 += 3;
 	player2 += 7;
-	// printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-	output(board, &player1, &player2, outputFP);
+	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
+	output(board, player1, player2, outputFP);
+	printf("board after first player1 and player 2 moves = %s \n", board);
+
+	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
+	player1 += 10;
+	player2 += 20;
+	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
+	output(board, player1, player2, outputFP);
+	printf("board after second player1 and player 2 moves = %s \n", board);
+
+	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
+	player1 += 3;
+	player2 += 6;
+	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
+	output(board, player1, player2, outputFP);
+	printf("board after third player1 and player 2 moves = %s \n", board);
 
 	
 	////////////////////////// END: HOW TO MOVE THE POINTER THROUGH THE BOARD! //////////////////////////////////
-	// fprintf(outputFP, "player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-	player1 += 10;
-	player2 += 20;
-	// printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-	output(board, &player1, &player2, outputFP);
-	// fprintf(outputFP, "player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
-
-
-	////////////////////////////// THIS FOR LOOP WORKS & IS FOR THE output(...){...} FUNCTION ///////////////////////////////////////
-	/*
-	for (int i = 0; i < SIZE; i++) {
-		putc(board[i], outputFP);
-	}
-	*/
-	////////////////////////////// THIS ABOVE FOR LOOP WORKS & IS FOR THE output(...){...} FUNCTION /////////////////////////////////
 	
-
+	
+	//////////////////// START OF TESTING rollDice(){...} FUNCTION FOR move(...){...} FUNCTION //////////////////
+	for (int i = 1; i <= 20; i++) {
+		testMove = rollDice();
+		printf("Dice roll #%d was: %d \n", i, testMove);
+	}
+	///////////////////// END OF TESTING rollDice(){...} FUNCTION FOR move(...){...} FUNCTION ///////////////////
+	
+	
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////// END OF TESTING CODE: DELETE BEFORE TURN IN //////////////////////////////////////////
-	output(board, player1, player2, outputFP);
+	
 
 	// while loop that will execute until the game is over
 	while (isGameOver == 0) {

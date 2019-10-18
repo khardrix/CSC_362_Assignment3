@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
-#include <math.h>
+#include <string.h>
 #include <stdlib.h>
 
 /* ---------------------------------------------- CONSTANT DECLARATIONS --------------------------------------------- */
@@ -10,7 +10,7 @@
 /* ----------------------------------------------- FUNCTION PROTOTYPES ---------------------------------------------- */
 // Used to output the current game board, including player 1's and player 2's
 	// positions to a disk file on a single line.
-void output(char*, char*, char*, FILE*);
+void output(char [], char*, char*, FILE*);
 
 // Used to move the players around the board. Other functions are called from
 	// called from this function to detect chutes and ladders and collisions.
@@ -24,7 +24,7 @@ char* move(char*, char*, int, char*, int);
 	// the nearest haven (denoted as a 'H'), with the direction
 	// depending on what the player landed on. This function changes the board
 	// and returns where the player is to move to the move(...){...} function.
-char* findHaven(char*, char*, int);
+char* findHaven(char [], char*, char);
 
 // Used to dictate where the player is to move to when that player lands on
 	// a chute (‘a’ – ‘m’: a chute, move backward) or
