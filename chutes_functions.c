@@ -208,54 +208,25 @@ char* findHaven(char board[], char* player, char direction) {
 	// This char pointer is used to store the original position of the passed in parameter char pointer variable, player
 	char *originalPlayerPosition = player;
 
-	// if statement that executes if the passed in parameter variable, direction, is equal to 'B'
 	if (direction == 'B') {
-		// if statement that checks if the passed in char pointer parameter, player, points to an 'H'
-		if (*player == 'H') {
-			// set the value of the char that the passed in char pointer parameter, player, points to equal to '*'
-			*player = '*';
-
-			// return the char pointer, player, (which represents the player's position) to the calling function
-			return player;
-		}
-		// else if statement that checks if the passed in char pointer parameter, player, has reached the beginning of 
-			// the passed in char array parameter, board
-		else if (player == board) {
-			// return the char pointer, player, (which represents the player's position) to the calling function
-			return player;
-		}
-		// else statement that executes if the passed in char pointer parameter, player, does not equal 'H' and 
-			// has not reached the beginning of the passed in char array parameter, board
-		else {
-			// decrement the position in the passed in char array parameter, board, that 
-				// the passed in char pointer parameter, player, points to
+		while (*player != board) {
+			if (*player == 'H') {
+				*player = '*';
+				return player;
+			}
 			player--;
 		}
+		return player;
 	}
-	// else if statement that checks if the passed in char paremeter, direction, is equal to 'F'
-	else if (direction == 'F') {
-		// if statement that checks if the passed in char pointer parameter, player, is equal to 'H'
-		if (*player == 'H') {
-			// set the value of the char that the passed in char pointer parameter, player, points to equal to '*'
-			*player = '*';
-
-			// return the char pointer, player, (which represents the player's position) to the calling function
-			return player;
-		}
-		// else if statement that checks if the passed in char pointer parameter, player, has reached the end of 
-			// the passed in char array parameter, board
-		else if (player == (board + SIZE)) {
-			// return the local char pointer variable, originalPlayerPosition. Which stores the original position in the
-				// passed in char array parameter, board, that the passed in char pointer parameter, player, was pointing to
-			return originalPlayerPosition;
-		}
-		// else statement that executes if the passed in char pointer parameter, player, does not equal 'H' and 
-			// has not reached the end of the passed in char array parameter, board
-		else {
-			// increment the position in the passed in char array parameter, board, that 
-				// the passed in char pointer parameter, player, points to
+	else {
+		while (*player != board + SIZE) {
+			if (*player == 'H') {
+				*player = '*';
+				return player;
+			}
 			player++;
 		}
+		return originalPlayerPosition;
 	}
 }
 
