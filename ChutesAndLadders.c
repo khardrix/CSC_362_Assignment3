@@ -53,6 +53,10 @@ int main() {
 
 	// TEST VARIABLES
 	int testMove;
+	int i;
+	int count;
+	int index;
+	int distanceBetweenPlayers;
 	/* -------------------------------------------- END OF VARIABLE DECLARATIONS ---------------------------------------------- */
 
 	// Used to seed the rand() function 
@@ -68,7 +72,8 @@ int main() {
 
 //////////////////////////////////////////// BEGINNING TESTING CODE: DELETE BEFORE TURN IN /////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	/////////////////////// BEGINNING: HOW TO MOVE THE POINTER THROUGH THE BOARD! ///////////////////////////////
+	/////////////////////// START OF TESTING HOW TO MOVE THE POINTER THROUGH THE BOARD //////////////////////////
+	/*
 	printf("Original board = %s \n", board);
 	printf("if the following number is a 0 then there was a collision: %d \n", collision(player1, player2));
 	player1 += 11;
@@ -92,27 +97,75 @@ int main() {
 	printf("player 1 = %c \nplayer 2 = %c \n", *player1, *player2);
 	output(board, player1, player2, outputFP);
 	printf("board after third player1 and player 2 moves = %s \n", board);
+	*/
+	///////////////////////// END OF TESTING HOW TO MOVE THE POINTER THROUGH THE BOARD //////////////////////////
 
-	
-	////////////////////////// END: HOW TO MOVE THE POINTER THROUGH THE BOARD! //////////////////////////////////
-	
-	
+
+
+
 	//////////////////// START OF TESTING rollDice(){...} FUNCTION FOR move(...){...} FUNCTION //////////////////
-	for (int i = 1; i <= 20; i++) {
+	/*
+	for (i = 1; i <= 20; i++) {
 		testMove = rollDice();
 		printf("Dice roll #%d was: %d \n", i, testMove);
 	}
+	*/
 	///////////////////// END OF TESTING rollDice(){...} FUNCTION FOR move(...){...} FUNCTION ///////////////////
+
+
+
+
+	/////////////////// START OF TESTING collition(){...} FUNCTION FOR move(...){...} FUNCTION //////////////////
+	/*
+	distanceBetweenPlayers = collision(player1, player2);
+	// "0" (zero) squares when there is a collision (player1 and player2 are on the same square)
+	printf("The distance between Player 1 ahd Player 2 is %d squares \n", distanceBetweenPlayers);
+
+	player1 += 3;
+	player2 += 4;
+	distanceBetweenPlayers = collision(player1, player2);
+	// Negative int when player2 is ahead on the board of player1
+	printf("The distance between Player 1 ahd Player 2 is %d squares \n", distanceBetweenPlayers);
+
+	player1 += 4;
+	player2 += 3;
+	distanceBetweenPlayers = collision(player1, player2);
+	// "0" (zero) squares when there is a collision (player1 and player2 are on the same square)
+	printf("The distance between Player 1 ahd Player 2 is %d squares \n", distanceBetweenPlayers);
+
+	player1 += 4;
+	player2 += 3;
+	distanceBetweenPlayers = collision(player1, player2);
+	// Positive int when player1 is ahead on the board of player2 
+	printf("The distance between Player 1 ahd Player 2 is %d squares \n", distanceBetweenPlayers);
+	*/
+	//////////////////// END OF TESTING collition(){...} FUNCTION FOR move(...){...} FUNCTION ///////////////////
+
+
+
+
+	////////////// START OF TESTING move(...){...} FUNCTION, WHICH IS HOW EACH PLAYER TAKES A TURN //////////////
+	/*
+	printf("\n\n\n\n\n\n\n\nTHIS TESTING IS FOR THE move(...){...} function, which is basically how the game is played! \n\n");
 	
-	
+	for (count = 1; count < 10; count++) {
+		player1 = move(player1, player2, 1, board, SIZE);
+	}
+	*/
+	/////////////// END OF TESTING move(...){...} FUNCTION, WHICH IS HOW EACH PLAYER TAKES A TURN ///////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////// END OF TESTING CODE: DELETE BEFORE TURN IN //////////////////////////////////////////
 	
 
 	// while loop that will execute until the game is over
-	while (isGameOver == 0) {
+	while (isGameOver < 10) {
+		/* TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
+		player1 = move(player1, player2, 1, board, SIZE); // player 1’s turn
+		player2 = move(player2, player1, 2, board, SIZE); // player 2’s turn
+		*/
 		isGameOver = isGameOver + 1;
 	}
+
 
 
 	// Close the output file with the FILE pointer
