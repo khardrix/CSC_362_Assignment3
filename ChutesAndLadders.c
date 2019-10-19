@@ -57,6 +57,7 @@ int main() {
 	int count;
 	int index;
 	int distanceBetweenPlayers;
+	int distanceToMove;
 	/* -------------------------------------------- END OF VARIABLE DECLARATIONS ---------------------------------------------- */
 
 	// Used to seed the rand() function 
@@ -159,6 +160,49 @@ int main() {
 
 
 
+	/////////////// START OF TESTING TO CALCULATE DISTANCE TO MOVE BECAUSE OF CHUTES AND LADDERS ////////////////
+	/*
+	player1 += 9;
+	printf("player1 is pointing at %c \n", *player1);
+
+	index = (int)(player1 - board);
+	printf("player1 is at square#: %d \n", index);
+
+	distanceToMove = (int)(*player1 - 'n');
+	printf("player1 needs to move %d squares \n\n\n\n", distanceToMove);
+
+	printf("AFTER player1 HAS BEEN MOVED \n");
+
+	player1 += distanceToMove;
+	printf("player1 is pointing at %c \n", *player1);
+
+	index = (int)(player1 - board);
+	printf("player1 is at square#: %d \n", index);
+
+
+
+	printf("\n\n\n\nAFTER MOVING player1 AGAIN \n");
+	player1 += 20;
+	printf("player1 is pointing at %c \n", *player1);
+
+	index = (int)(player1 - board);
+	printf("player1 is at square#: %d \n", index);
+
+	distanceToMove = (int)(*player1 - 'n');
+	printf("player1 needs to move %d squares \n\n\n\n", distanceToMove);
+
+	printf("AFTER player1 HAS BEEN MOVED \n");
+
+	player1 += distanceToMove;
+	printf("player1 is pointing at %c \n", *player1);
+
+	index = (int)(player1 - board);
+	printf("player1 is at square#: %d \n", index);
+	*/
+	//////////////// END OF TESTING TO CALCULATE DISTANCE TO MOVE BECAUSE OF CHUTES AND LADDERS /////////////////
+
+
+
 
 	////////////// START OF TESTING move(...){...} FUNCTION, WHICH IS HOW EACH PLAYER TAKES A TURN //////////////
 	/*
@@ -175,12 +219,12 @@ int main() {
 
 	// while loop that will execute until the game is over
 	while (isGameOver < 10) {
-		// TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
+		/* TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
 		player1 = move(player1, player2, 1, board, SIZE); // player 1’s turn
 		player2 = move(player2, player1, 2, board, SIZE); // player 2’s turn
 		
 		output(board, player1, player2, outputFP);
-
+		*/
 		isGameOver = isGameOver + 1;
 	}
 
