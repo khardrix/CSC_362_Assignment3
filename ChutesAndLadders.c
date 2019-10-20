@@ -237,7 +237,7 @@ int main() {
 	
 
 	// while loop that will execute until the game is over
-	while (isGameOver < 10) {
+	while (player1 != board + (SIZE - 1) && player2 != board + (SIZE - 1)) {
 		// TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
 		player1 = move(player1, player2, 1, board, SIZE); // player 1’s turn
 		player2 = move(player2, player1, 2, board, SIZE); // player 2’s turn

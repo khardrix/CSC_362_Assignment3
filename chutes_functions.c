@@ -192,8 +192,8 @@ char* move(char *movingPlayer, char *waitingPlayer, int playerNumber, char board
 		}
 	}
 	else {
-		movingPlayer = board + size;
-		printf("Player %d has reached the end of the game board!", playerNumber);
+		movingPlayer = board + (size - 1);
+		printf("Player %d has reached the end of the game board! \n\n", playerNumber);
 	}
 
 	return movingPlayer;
@@ -209,7 +209,7 @@ char* findHaven(char board[], char* player, char direction) {
 	char *originalPlayerPosition = player;
 
 	if (direction == 'B') {
-		while (*player != board) {
+		while (*player >= board) {
 			if (*player == 'H') {
 				*player = '*';
 				return player;
@@ -219,7 +219,7 @@ char* findHaven(char board[], char* player, char direction) {
 		return player;
 	}
 	else {
-		while (*player != board + SIZE) {
+		while (*player < board + SIZE) {
 			if (*player == 'H') {
 				*player = '*';
 				return player;
@@ -258,7 +258,7 @@ char* chuteLadder(char *player, char board[]) {
 			}
 		}
 		else {
-			if (player + moveAmount < board + SIZE) {
+			if (player + moveAmount < board + (SIZE - 1)) {
 				player += moveAmount;
 				*pointerCopy = '-';
 			}
