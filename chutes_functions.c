@@ -239,31 +239,36 @@ char* findHaven(char board[], char* player, char direction) {
 		// function that calls this chuteLadder(...){...} function.
 char* chuteLadder(char *player, char board[]) {
 
-	// int variable to store the distance the passed in char pointer parameter, player, will travel along in the
-		// passed char array parameter, board
-	int distance = (int)(*player - 'n');
+	char *pointerCopy;
+	int moveAmount;
 
-	// if statement that checks that the passed in char pointer parameter, player, does not point to a 'n'
+	pointerCopy = player;
+
 	if (*player != 'n') {
-		// set the value of the char that is pointed to by the passed in char pointer parameter, player, to be a '-'
-		*player = '-';
-	}
-	
-	// if statement that checks to see if the passed in char pointer parameter, player, goes outside the 
-		// beginning of the passed in char array parameter, board. If it does, have the passed in char pointer parameter, player,
-		// point to the beginning of the passed in char array parameter, board
-	if ((*player + distance) < board) {
-		// set the passed in char pointer parameter, player, to point to the beginning of the passed in char array parameter, board
-		player = board;
-	}
-	// else statement that executes if the passed in char pointer parameter, player, plus the distance to travel in
-		// the passed in char array parameter, board, does not exceed the beginning of board
-	else {
-		// set the passed in char pointer parameter, player, to move the distance calculated by the int distance variable
-		player = player + distance;
+		moveAmount = (int)(*player - 'n');
+
+		if (moveAmount < 0) {
+			if (player - moveAmount >= board) {
+				player += moveAmount;
+				*pointerCopy = '-';
+			}
+			else {
+				player = board;
+				*pointerCopy = '-';
+			}
+		}
+		else {
+			if (player + moveAmount < board + SIZE) {
+				player += moveAmount;
+				*pointerCopy = '-';
+			}
+			else {
+				player = board + (SIZE - 1);
+				*pointerCopy = '-';
+			}
+		}
 	}
 
-	// return the updated position of the passed in char pointer parameter, player, to the calling function
 	return player;
 }
 

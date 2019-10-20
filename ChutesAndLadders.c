@@ -58,6 +58,7 @@ int main() {
 	int index;
 	int distanceBetweenPlayers;
 	int distanceToMove;
+	char* testPointer;
 	/* -------------------------------------------- END OF VARIABLE DECLARATIONS ---------------------------------------------- */
 
 	// Used to seed the rand() function 
@@ -144,6 +145,7 @@ int main() {
 
 
 
+
 	///////// START OF TESTING HOW TO CHANGE A VALUE AT A POINTER INDEX INSIDE THE BOARD CHAR ARRAY /////////////
 	/*
 	player1 += 3;
@@ -157,6 +159,23 @@ int main() {
 	}
 	*/
 	////////// END OF TESTING HOW TO CHANGE A VALUE AT A POINTER INDEX INSIDE THE BOARD CHAR ARRAY //////////////
+
+
+
+
+	//////////////////////////// START OF TESTING CREATING A COPY OF A char pointer /////////////////////////////
+	/*
+	player1 += 3;
+	printf("player1 is pointing at %c \n", *player1);
+	testPointer = player1;
+	printf("testPointer is pointing at %c \n", *testPointer);
+
+	testPointer++;
+	printf("testPointer is pointing at %c \n", *testPointer);
+	printf("player1 is pointing at %c \n", *player1);
+	*/
+	///////////////////////////// END OF TESTING CREATING A COPY OF A char pointer //////////////////////////////
+
 
 
 
@@ -219,12 +238,12 @@ int main() {
 
 	// while loop that will execute until the game is over
 	while (isGameOver < 10) {
-		/* TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
+		// TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
 		player1 = move(player1, player2, 1, board, SIZE); // player 1’s turn
 		player2 = move(player2, player1, 2, board, SIZE); // player 2’s turn
 		
 		output(board, player1, player2, outputFP);
-		*/
+		
 		isGameOver = isGameOver + 1;
 	}
 
