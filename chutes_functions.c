@@ -73,37 +73,16 @@ char* move(char *movingPlayer, char *waitingPlayer, int playerNumber, char board
 	distance = rollDice();
 	
 
-	if (movingPlayer >= board && (movingPlayer + distance) < (board + size)) {
-		movingPlayer = movingPlayer + distance;
-		originalPlayerPosition = movingPlayer;
-		distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
-
-		if (*movingPlayer == 'B') {
-			index = (int)(movingPlayer - board);
-			printf("Player %d rolled %d and moved to square %d which is a \'B\' so is moving back and lands at ", playerNumber, distance, index);
-			movingPlayer = findHaven(board, movingPlayer, 'B');
-			index = (int)(movingPlayer - board);
-			printf("%d", index);
-
+	if (movingPlayer >= board) {
+		if((movingPlayer + distance) < (board + size)) {
+			movingPlayer = movingPlayer + distance;
+			originalPlayerPosition = movingPlayer;
 			distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
 
-			if (distanceBetweenPlayers == 0) {
-				if (movingPlayer != board) {
-					movingPlayer = movingPlayer - 1;
-					index = (int)(movingPlayer - board);
-					printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
-				}
-			}
-			else {
-				printf("\n\n");
-			}
-		}
-		else if (*movingPlayer == 'F') {
-			movingPlayer = findHaven(board, movingPlayer, 'F');
-
-			if (originalPlayerPosition != movingPlayer) {
-				index = (int)(originalPlayerPosition - board);
-				printf("Player %d rolled %d and moved to square %d which is a \'F\' so is moving forward and lands at ", playerNumber, distance, index);
+			if (*movingPlayer == 'B') {
+				index = (int)(movingPlayer - board);
+				printf("Player %d rolled %d and moved to square %d which is a \'B\' so is moving back and lands at ", playerNumber, distance, index);
+				movingPlayer = findHaven(board, movingPlayer, 'B');
 				index = (int)(movingPlayer - board);
 				printf("%d", index);
 
@@ -120,80 +99,103 @@ char* move(char *movingPlayer, char *waitingPlayer, int playerNumber, char board
 					printf("\n\n");
 				}
 			}
+			else if (*movingPlayer == 'F') {
+				movingPlayer = findHaven(board, movingPlayer, 'F');
+
+				if (originalPlayerPosition != movingPlayer) {
+					index = (int)(originalPlayerPosition - board);
+					printf("Player %d rolled %d and moved to square %d which is a \'F\' so is moving forward and lands at ", playerNumber, distance, index);
+					index = (int)(movingPlayer - board);
+					printf("%d", index);
+
+					distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
+
+					if (distanceBetweenPlayers == 0) {
+						if (movingPlayer != board) {
+							movingPlayer = movingPlayer - 1;
+							index = (int)(movingPlayer - board);
+							printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
+						}
+					}
+					else {
+						printf("\n\n");
+					}
+				}
+				else {
+					index = (int)(movingPlayer - board);
+					printf("Player %d rolled %d and moved to square %d which is a \'F\', but there is no \'H\'s after square %d, so the player does not move any further forward \n\n", playerNumber, distance, index, index);
+				}
+			}
+			else if (*movingPlayer == ' ') {
+				if (distanceBetweenPlayers != 0) {
+					index = (int)(movingPlayer - board);
+					printf("Player %d rolled %d and moved to square %d \n\n", playerNumber, distance, index);
+				}
+				else {
+					index = (int)(movingPlayer - board);
+					printf("Player %d rolled %d and moved to square %d", playerNumber, distance, index);
+					movingPlayer = movingPlayer - 1;
+					index = (int)(movingPlayer - board);
+					printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
+				}
+			}
 			else {
-				index = (int)(movingPlayer - board);
-				printf("Player %d rolled %d and moved to square %d which is a \'F\', but there is no \'H\'s after square %d, so the player does not move any further forward \n\n", playerNumber, distance, index, index);
-			}
-		}
-		else if (*movingPlayer == ' ') {
-			if (distanceBetweenPlayers != 0) {
-				index = (int)(movingPlayer - board);
-				printf("Player %d rolled %d and moved to square %d \n\n", playerNumber, distance, index);
-			}
-			else {
-				index = (int)(movingPlayer - board);
-				printf("Player %d rolled %d and moved to square %d", playerNumber, distance, index);
-				movingPlayer = movingPlayer - 1;
-				index = (int)(movingPlayer - board);
-				printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
-			}
+				if (*movingPlayer >= 'a' && *movingPlayer <= 'm') {
+					originalPlayerPosition = movingPlayer;
+					index2 = (int)(originalPlayerPosition - board);
+					movingPlayer = chuteLadder(movingPlayer, board);
+					index = (int)(movingPlayer - board);
+					*originalPlayerPosition = '-';
+
+					printf("Player %d rolled %d and moved to square %d which is a chute and is moving back to square %d", playerNumber, distance, index2, index);
+
+					distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
+
+					if (distanceBetweenPlayers == 0) {
+						if (movingPlayer != board) {
+							movingPlayer = movingPlayer - 1;
+							index = (int)(movingPlayer - board);
+							printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
+						}
+						else {
+							printf("\n\n");
+						}
+					}
+					else {
+						printf("\n\n");
+					}
+				}
+				else if (*movingPlayer >= 'o' && *movingPlayer <= 'z') {
+					originalPlayerPosition = movingPlayer;
+					index2 = (int)(originalPlayerPosition - board);
+					movingPlayer = chuteLadder(movingPlayer, board);
+					index = (int)(movingPlayer - board);
+					*originalPlayerPosition = '-';
+
+					printf("Player %d rolled %d and moved to square %d which is a ladder and is moving forward to square %d", playerNumber, distance, index2, index);
+
+					distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
+
+					if (distanceBetweenPlayers == 0) {
+						if (movingPlayer != board) {
+							movingPlayer = movingPlayer - 1;
+							index = (int)(movingPlayer - board);
+							printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
+						}
+						else {
+							printf("\n\n");
+						}
+					}
+					else {
+						printf("\n\n");
+					}
+				}
+			} 
 		}
 		else {
-			if (*movingPlayer >= 'a' && *movingPlayer <= 'm') {
-				originalPlayerPosition = movingPlayer;
-				index2 = (int)(originalPlayerPosition - board);
-				movingPlayer = chuteLadder(movingPlayer, board);
-				index = (int)(movingPlayer - board);
-				*originalPlayerPosition = '-';
-
-				printf("Player %d rolled %d and moved to square %d which is a chute and is moving back to square %d", playerNumber, distance, index2, index);
-
-				distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
-
-				if (distanceBetweenPlayers == 0) {
-					if (movingPlayer != board) {
-						movingPlayer = movingPlayer - 1;
-						index = (int)(movingPlayer - board);
-						printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
-					}
-					else {
-						printf("\n\n");
-					}
-				}
-				else {
-					printf("\n\n");
-				}
-			}
-			else if (*movingPlayer >= 'o' && *movingPlayer <= 'z') {
-				originalPlayerPosition = movingPlayer;
-				index2 = (int)(originalPlayerPosition - board);
-				movingPlayer = chuteLadder(movingPlayer, board);
-				index = (int)(movingPlayer - board);
-				*originalPlayerPosition = '-';
-
-				printf("Player %d rolled %d and moved to square %d which is a ladder and is moving forward to square %d", playerNumber, distance, index2, index);
-
-				distanceBetweenPlayers = collision(movingPlayer, waitingPlayer);
-
-				if (distanceBetweenPlayers == 0) {
-					if (movingPlayer != board) {
-						movingPlayer = movingPlayer - 1;
-						index = (int)(movingPlayer - board);
-						printf("  -- Collision! %d is moving back 1 square to %d \n\n", playerNumber, index);
-					}
-					else {
-						printf("\n\n");
-					}
-				}
-				else {
-					printf("\n\n");
-				}
-			}
+			movingPlayer += distance;
+			printf("Player %d has reached the end of the game board! \n\n", playerNumber);
 		}
-	}
-	else {
-		movingPlayer = board + (size - 1);
-		printf("Player %d has reached the end of the game board! \n\n", playerNumber);
 	}
 
 	return movingPlayer;
@@ -209,7 +211,7 @@ char* findHaven(char board[], char* player, char direction) {
 	char *originalPlayerPosition = player;
 
 	if (direction == 'B') {
-		while (*player >= board) {
+		while (player > board) {
 			if (*player == 'H') {
 				*player = '*';
 				return player;
@@ -219,7 +221,7 @@ char* findHaven(char board[], char* player, char direction) {
 		return player;
 	}
 	else {
-		while (*player < board + SIZE) {
+		while (player < board + SIZE) {
 			if (*player == 'H') {
 				*player = '*';
 				return player;
@@ -248,24 +250,20 @@ char* chuteLadder(char *player, char board[]) {
 		moveAmount = (int)(*player - 'n');
 
 		if (moveAmount < 0) {
-			if (player - moveAmount >= board) {
+			if (player + moveAmount >= board) {
 				player += moveAmount;
 				*pointerCopy = '-';
+				return player;
 			}
 			else {
-				player = board;
+				player = &board[0];
 				*pointerCopy = '-';
+				return player;
 			}
 		}
 		else {
-			if (player + moveAmount < board + (SIZE - 1)) {
-				player += moveAmount;
-				*pointerCopy = '-';
-			}
-			else {
-				player = board + (SIZE - 1);
-				*pointerCopy = '-';
-			}
+			player += moveAmount;
+			*pointerCopy = '-';
 		}
 	}
 

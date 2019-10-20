@@ -58,6 +58,10 @@ int main() {
 	int index;
 	int distanceBetweenPlayers;
 	int distanceToMove;
+
+	int player1Index;
+	int player2Index;
+
 	char* testPointer;
 	/* -------------------------------------------- END OF VARIABLE DECLARATIONS ---------------------------------------------- */
 
@@ -237,7 +241,7 @@ int main() {
 	
 
 	// while loop that will execute until the game is over
-	while (player1 != board + (SIZE - 1) && player2 != board + (SIZE - 1)) {
+	while (player1 <= board + (SIZE - 1) && player2 <= board + (SIZE - 1)) {
 		// TEMPORARILY COMMENTED OUT! MAKE SURE TO UNCOMMENT AND FINISH GAME IN ORDER TO TURN IN
 		player1 = move(player1, player2, 1, board, SIZE); // player 1’s turn
 		player2 = move(player2, player1, 2, board, SIZE); // player 2’s turn
@@ -245,6 +249,19 @@ int main() {
 		output(board, player1, player2, outputFP);
 		
 		isGameOver = isGameOver + 1;
+	}
+
+	player1Index = (int)(player1 - board);
+	player2Index = (int)(player2 - board);
+
+	if (player1Index > player2Index) {
+		printf("PLAYER 1 WINS! \n\n");
+	}
+	else if (player1Index < player2Index) {
+		printf("PLAYER 2 WINS! \n\n");
+	}
+	else {
+		printf("THERE WAS A TIE! \n\n");
 	}
 
 
