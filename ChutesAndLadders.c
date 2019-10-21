@@ -254,6 +254,9 @@ int main() {
 	player1Index = (int)(player1 - board);
 	player2Index = (int)(player2 - board);
 
+	printf("PLAYER 1 INDEX = %d \n", player1Index);
+	printf("PLAYER 2 INDEX = %d \n\n", player2Index);
+
 	if (player1Index > player2Index) {
 		printf("PLAYER 1 WINS! \n\n");
 	}

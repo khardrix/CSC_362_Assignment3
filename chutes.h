@@ -20,6 +20,8 @@ void output(char [], char*, char*, FILE*);
 		// returns a char pointer
 char* move(char*, char*, int, char [], int);
 
+char* move2(char*, char*, int, char[], int);
+
 // Used when a player lands on a 'B' or 'F'. This function searches for the
 	// the nearest haven (denoted as a 'H'), with the direction
 	// depending on what the player landed on. This function changes the board
