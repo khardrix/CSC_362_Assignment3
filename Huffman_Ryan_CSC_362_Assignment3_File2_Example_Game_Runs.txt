@@ -1,0 +1,161 @@
+board-1.txt
+char board[100]="  mHk  H l B He Flq p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB ";
+GAME 1:
+Player 1 rolled 3 and moved to square 3
+
+Player 2 rolled 4 and moved to square 4 which is a chute and is moving back to square 1
+
+Player 1 rolled 3 and moved to square 6
+
+Player 2 rolled 3 and moved to square 4
+
+Player 1 rolled 5 and moved to square 11 which is a 'B' so is moving back and lands at 7
+
+Player 2 rolled 3 and moved to square 7  -- Collision! 2 is moving back 1 square to 6
+
+Player 1 rolled 6 and moved to square 13
+
+Player 2 rolled 3 and moved to square 9 which is a chute and is moving back to square 7
+
+Player 1 rolled 4 and moved to square 17 which is a chute and is moving back to square 15
+
+Player 2 rolled 3 and moved to square 10
+
+Player 1 rolled 1 and moved to square 16 which is a 'F' so is moving forward and lands at 22
+
+Player 2 rolled 2 and moved to square 12
+
+Player 1 rolled 2 and moved to square 24
+
+Player 2 rolled 3 and moved to square 15
+
+Player 1 rolled 2 and moved to square 26 which is a 'B' so is moving back and lands at 13
+
+Player 2 rolled 4 and moved to square 19
+
+Player 1 rolled 1 and moved to square 14 which is a chute and is moving back to square 5
+
+Player 2 rolled 2 and moved to square 21
+
+Player 1 rolled 6 and moved to square 11 which is a 'B' so is moving back and lands at 3
+
+Player 2 rolled 5 and moved to square 26 which is a 'B' so is moving back and lands at 0
+
+Player 1 rolled 1 and moved to square 4
+
+Player 2 rolled 4 and moved to square 4  -- Collision! 2 is moving back 1 square to 3
+
+Player 1 rolled 5 and moved to square 9
+
+Player 2 rolled 6 and moved to square 9  -- Collision! 2 is moving back 1 square to 8
+
+Player 1 rolled 4 and moved to square 13
+
+Player 2 rolled 6 and moved to square 14
+
+Player 1 rolled 6 and moved to square 19
+
+Player 2 rolled 1 and moved to square 15
+
+Player 1 rolled 4 and moved to square 23
+
+Player 2 rolled 1 and moved to square 16 which is a 'F' so is moving forward and lands at 28
+
+Player 1 rolled 4 and moved to square 27 which is a ladder and is moving forward to square 38
+
+Player 2 rolled 1 and moved to square 29 which is a chute and is moving back to square 27
+
+Player 1 rolled 1 and moved to square 39 which is a ladder and is moving forward to square 43
+
+Player 2 rolled 3 and moved to square 30 which is a chute and is moving back to square 24
+
+Player 1 rolled 1 and moved to square 44
+
+Player 2 rolled 6 and moved to square 30
+
+Player 1 rolled 3 and moved to square 47
+
+Player 2 rolled 1 and moved to square 31 which is a ladder and is moving forward to square 32
+
+Player 1 rolled 5 and moved to square 52
+
+Player 2 rolled 5 and moved to square 37
+
+Player 1 rolled 4 and moved to square 56 which is a ladder and is moving forward to square 63
+
+Player 2 rolled 6 and moved to square 43 which is a 'B' so is moving back and lands at 41
+
+Player 1 rolled 2 and moved to square 65 which is a chute and is moving back to square 61
+
+Player 2 rolled 5 and moved to square 46 which is a ladder and is moving forward to square 50
+
+Player 1 rolled 3 and moved to square 64 which is a ladder and is moving forward to square 66
+
+Player 2 rolled 1 and moved to square 51
+
+Player 1 rolled 5 and moved to square 71 which is a ladder and is moving forward to square 81
+
+Player 2 rolled 6 and moved to square 57
+
+Player 1 rolled 2 and moved to square 83
+
+Player 2 rolled 6 and moved to square 63
+
+Player 1 rolled 4 and moved to square 87
+
+Player 2 rolled 6 and moved to square 69
+
+Player 1 rolled 6 and moved to square 93 which is a ladder and is moving forward to square 94
+
+Player 2 rolled 6 and moved to square 75 which is a 'F' so is moving forward and lands at 79
+
+Player 1 rolled 2 and moved to square 96 which is a 'B' so is moving back and lands at 94
+
+Player 2 rolled 3 and moved to square 82 which is a chute and is moving back to square 81
+
+Player 1 was at square 94 and rolled a 6 and landed on square 100
+Player 1 has reached the end of the game board!
+
+Player 2 rolled 4 and moved to square 85 which is a 'B' so is moving back and lands at 69
+
+PLAYER 1 INDEX = 100
+PLAYER 2 INDEX = 69
+
+PLAYER 1 WINS!
+
+
+C:\Users\user\source\repos\Huffman_Ryan_CSC_362_Assignment_3\Debug\Huffman_Ryan_CSC_362_Assignment_3.exe (process 13988) exited with code 0.
+To automatically close the console when debugging stops, enable Tools->Options->Debugging->Automatically close the console when debugging stops.
+Press any key to close this window . . .
+
+
+
+ 2m1-  H l B He Flq p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH2 1H l B He Flq p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH- 21 l B He Flq p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-  2 - B 1e Flq p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-  * -2B He1F-q p H  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-  * - B2He F-q p 1  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-  * - B He2F-q p * 1hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-  * - B 1e F-q2p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  mH-1 * - B *- F-q p2*  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+2 m1-  * - B *- F-q p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m21  * - B *- F-q p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  *21 B *- F-q p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B 12 F-q p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *-2F-q1p *  hByHlho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *1 hBy2lho H B  jr HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB2*-ho H B  1r HFB ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p * 2hB-*--o H B  j- HF1 ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*-2o H B  j- HFB1ir j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*---2H B  j- HFB ir1j H  F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B 2j- HFB ir j H 1F ku gd  H pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- 2FB ir j H  F k- gd  H1pjB mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j 2  F k- gd 1H p-B mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H2 F k- gd  H --1 mH x  BF i H  m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k-2gd  H --B mH -  BF i H 1m oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k- gd  H2--B mH -  BF i H  m1oB HlHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k- gd  H --B m2 -  BF i H  m oB 1lHFBhoH BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k- gd  H --B mH -  BF i 2  m oB HlHFBh-1 BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k- gd  H --B mH -  BF i * 2- oB HlHFBh-1 BB 
+  m*-  * - B *- F-q p *  hB-*--- H B  j- *FB i- j H  F k- gd  H --B m2 -  BF i *  - oB HlHFBh-* BB 
